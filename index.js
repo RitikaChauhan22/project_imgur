@@ -1,8 +1,8 @@
 function showData() {
         async function nav() {
             let container = document.getElementById("container")
-            var api = "THQmZAArw8DpyGkVnb8bK1CY7zkAbHDwx8yOO0vILFw"
-            var x = "Dubai"
+            var api = "PPL7hXCLTr0XTIAEqiU48jJcvYmFlfSfAV0_jgj7Z2g"
+            var x = "World"
             let res = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${x}&client_id=${api}`);
             let data = await res.json();
 
