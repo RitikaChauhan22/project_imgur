@@ -25,4 +25,35 @@
             <p class="more">MORE TAGS +</p>
         </div>
         </div>
-    </div>   
+
+        <div id="container"></div>
+
+    </div> 
+    
+    <script type="module">
+      import { showData } from "./index.js";
+      showData();
+    </script>
+  
+  <script>
+      
+      var api = "THQmZAArw8DpyGkVnb8bK1CY7zkAbHDwx8yOO0vILFw";
+
+      async function myFunction() {
+          let input_box = document.getElementById("input-search").value;
+          let response = await fetch(`https://api.unsplash.com/search/photos?page=1&query=${input}&client_id=${api}`);
+  
+          let data = await response.json();
+          var out = [];
+        
+          for (var i = 0; i < data.results.length; i++) {
+              out.push(data.results[i].urls)
+          }
+          
+          localStorage.setItem("name", JSON.stringify(input_box))
+          localStorage.setItem("images_data", JSON.stringify(output))
+  
+          window.location.href = "./search.html";
+
+      }
+  </script>
